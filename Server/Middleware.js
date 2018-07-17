@@ -6,6 +6,9 @@ module.exports = (app) => {
     }));
     app.use(bodyParser.json());
 
+    var cors = require('cors');
+    app.use(cors());
+
     let mongoose = require("mongoose");
     mongoose.connect(require(global.rootPath + "/Server/Config").mongodb, { useNewUrlParser: true });
     
