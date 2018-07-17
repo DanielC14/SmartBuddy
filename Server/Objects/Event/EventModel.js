@@ -6,7 +6,8 @@ let schema = new mongoose.Schema({
     address: { type: String, default: null },
     lat: { type: Number, default: null },
     lng: { type: Number, default: null },
-    date: { type: Date, default: null }
+    date: { type: Date, default: null },
+    object_type: {type: String, default: "event"}
 });
 
 module.exports = mongoose.model("events", schema);

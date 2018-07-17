@@ -63,13 +63,9 @@ exports.get = (request, response) => {
         if (error)
             throw error;
 
-        return response.status(200).send({
-            animals: animals,
-            events: events,
-            hotels: hotels,
-            parks: parks,
-            vets: vets
-        });
+            let array  = animals.concat(events).concat(hotels).concat(parks).concat(vets);
+
+        return response.status(200).send(array);
 
     });
 
