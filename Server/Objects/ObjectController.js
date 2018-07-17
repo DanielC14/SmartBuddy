@@ -15,7 +15,7 @@ exports.get = (request, response) => {
         vets = [];
 
     let findAnimal = (callback) => {
-        Animal.find({}, (error, animals_temp) => {
+        Animal.find({ collected: false }, (error, animals_temp) => {
             if (error)
                 throw error;
             animals = animals_temp;

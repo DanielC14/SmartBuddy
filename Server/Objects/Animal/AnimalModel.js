@@ -10,7 +10,8 @@ let schema = new mongoose.Schema({
     type: { type: Number, required: true, unique: false },
     picture: { type: String, required: false, unique: false, default: "https://www.goodfreephotos.com/albums/vector-images/dog-cartoon-vector-clipart.png" },
     lat: { type: Number, default: null },
-    lng: { type: Number, default: null }
+    lng: { type: Number, default: null },
+    collected: {type: Boolean, default: false}
 });
 
 module.exports = mongoose.model("animals", schema);
