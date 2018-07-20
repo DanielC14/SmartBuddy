@@ -6,7 +6,7 @@ const Animal = require("./Animal/AnimalModel"),
 
 const Asyncjs = require("async");
 
-exports.get = () => {
+exports.get = (request, response) => {
     getAll((array) => {
         return response.status(200).send(array);
     });
