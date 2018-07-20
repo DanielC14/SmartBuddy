@@ -76,15 +76,15 @@ function getAll(next) {
 }
 
 
-global.wsServer.on('request', function (request) {
+// global.wsServer.on('request', function (request) {
 
-    var connection = request.accept('echo-protocol', request.origin);
-    connection.on('message', function () {
-        getAll((array)=>{
-            connection.send(JSON.stringify(array));
-        });
-    });
-    connection.on('close', function (reasonCode, description) {
-        console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
-    });
-});
+//     var connection = request.accept('echo-protocol', request.origin);
+//     connection.on('message', function () {
+//         getAll((array)=>{
+//             connection.send(JSON.stringify(array));
+//         });
+//     });
+//     connection.on('close', function (reasonCode, description) {
+//         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
+//     });
+// });

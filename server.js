@@ -6,23 +6,23 @@ global.rootPath = __dirname;
 
 const server = http.createServer(app);
 
-var WebSocketServer = require('websocket').server;
-global.wsServer = new WebSocketServer({
-    httpServer: server,
-    autoAcceptConnections: false
-});
+// var WebSocketServer = require('websocket').server;
+// global.wsServer = new WebSocketServer({
+//     httpServer: server,
+//     autoAcceptConnections: false
+// });
 
 require("./Server/Config");
 require("./Server/Middleware")(app);
 require("./Server/Routes")(app);
 
-app.get("/", (request, response)=>{
-    response.sendFile(__dirname + '/index.html');
-});
+// app.get("/", (request, response)=>{
+//     response.sendFile(__dirname + '/index.html');
+// });
 
-app.get("/manifest", (request, response)=>{
-    response.sendFile(__dirname + '/manifest/manifest.json');
-});
+// app.get("/manifest", (request, response)=>{
+//     response.sendFile(__dirname + '/manifest/manifest.json');
+// });
 
 
 
