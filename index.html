@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="manifest" href="/manifest">
+</head>
+
+<body>
+
+    <script>
+
+        var url = 'ws://' + 'https://smartbuddy-mss.herokuapp.com' + "/";
+        var webSocket = new WebSocket(url, "echo-protocol");
+        let id = 0
+
+        webSocket.onmessage = function (event) {
+            let data = event.data
+            console.log(JSON.parse(data))
+        };
+
+        var eventSource = new EventSource(url);
+        eventSource.onmessage = function (event) {
+            var data = JSON.parse(event.data);
+        }
+
+        function sendMessage() {
+            console.log('sent')
+            let object = {
+                id: id,
+                message: 'Hello Dani at ' + new Date().toISOString() + '!'
+            }
+            webSocket.send(JSON.stringify(object));
+        }
+    </script>
+    <button onclick="sendMessage()">SEND</button>
+</body>
+
+</html>

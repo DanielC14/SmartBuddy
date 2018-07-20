@@ -1,0 +1,52 @@
+{
+    "short_name": "sBuddy",
+    "name": "SmartBuddy",
+    "icons": [
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBTA29NVA/16x16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBUSNGUJ2/32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBTMTT9SR/64x64.png",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBTD9S43D/70x70.png",
+        "type": "image/png",
+        "sizes": "70x70"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBUSNHQSJ/150x150.png",
+        "type": "image/png",
+        "sizes": "150x150"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBTM9AG9K/192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBSRMHM9N/310x310.png",
+        "type": "image/png",
+        "sizes": "310x310"
+      },
+      {
+        "src": "https://files.slack.com/files-pri/TBR2ZKPRN-FBTM9B42H/512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#4ECDC4"
+
+  }

@@ -6,7 +6,13 @@ const Animal = require("./Animal/AnimalModel"),
 
 const Asyncjs = require("async");
 
-exports.get = (request, response) => {
+exports.get = () => {
+    getAll((array) => {
+        return response.status(200).send(array);
+    });
+};
+
+function getAll(next) {
 
     let animals = [],
         events = [],
@@ -63,12 +69,22 @@ exports.get = (request, response) => {
         if (error)
             throw error;
 
-            let array  = animals.concat(events).concat(hotels).concat(parks).concat(vets);
-
-        return response.status(200).send(array);
-
+        let array = animals.concat(events).concat(hotels).concat(parks).concat(vets);
+        next(array);
     });
 
+}
 
 
-};
+global.wsServer.on('request', function (request) {
+
+    var connection = request.accept('echo-protocol', request.origin);
+    connection.on('message', function () {
+        getAll((array)=>{
+            connection.send(JSON.stringify(array));
+        });
+    });
+    connection.on('close', function (reasonCode, description) {
+        console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
+    });
+});
