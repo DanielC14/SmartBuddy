@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const http = require('http');
+var serveStatic = require('serve-static');
 
 global.rootPath = __dirname;
 
@@ -15,7 +16,7 @@ const server = http.createServer(app);
 require("./Server/Config");
 require("./Server/Middleware")(app);
 require("./Server/Routes")(app);
-
+app.use(serveStatic(__dirname + "/dist"));
 // app.get("/", (request, response)=>{
 //     response.sendFile(__dirname + '/index.html');
 // });
